@@ -1,0 +1,16 @@
+@startuml
+
+package "Nivel de Ingesta de Datos" {
+  component "Python y Pandas" as Pandas
+  component "Adquisición de Datos" as Adquisicion
+  component "Filtrado y Limpieza" as Filtrado
+  component "Transformación y Enriquecimiento" as Transformacion
+  component "Monitorización de Calidad" as Monitoreo
+}
+
+Adquisicion --> Pandas : Procesa datos
+Filtrado --> Pandas : Normaliza y limpia datos
+Transformacion --> Pandas : Enriquecimiento de datos
+Monitoreo --> Pandas : Verifica calidad
+
+@enduml

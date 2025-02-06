@@ -1,0 +1,51 @@
+@startuml
+
+rectangle "Usuarios" as Usuarios
+rectangle "Interfaz Web" as UI
+rectangle "Base de Datos" as DB
+rectangle "Almacenamiento de Ontologías" as OntoDB
+
+package "Nivel de Ingesta de Datos" {
+component "Adquisición de Datos" as Adquisicion
+component "Filtrado y Limpieza" as Filtrado
+component "Transformación y Enriquecimiento" as Transformacion
+component "Monitorización de Calidad" as Monitoreo
+}
+
+package "Nivel de Procesamiento de NLP" {
+component "Hugging Face Transformers (BERT)" as BERT
+component "SpaCy" as Spacy
+component "TensorFlow/PyTorch" as Tensor
+component "Identificación de Entidades" as Identificacion
+component "Clasificación de Relaciones" as Clasificacion
+component "Propuestas de Actualización" as Propuestas
+}
+
+package "Nivel de Gestión de Ontologías" {
+component "OWL API" as OWL
+component "Validación Automática" as Validacion
+component "Almacenamiento de Versiones" as Almacenamiento
+component "Resolución de Conflictos" as Resolucion
+}
+
+Usuarios --> UI
+UI --> Adquisicion
+UI --> DB
+UI --> OntoDB
+
+Adquisicion --> Filtrado
+Filtrado --> Transformacion
+Transformacion --> Monitoreo
+
+Transformacion --> Identificacion
+Identificacion --> BERT
+Clasificacion --> Spacy
+Clasificacion --> Tensor
+
+Propuestas --> OWL
+OWL --> Validacion
+OWL --> Almacenamiento
+OWL --> Resolucion
+OWL --> OntoDB
+
+@enduml

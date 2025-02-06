@@ -1,0 +1,17 @@
+@startuml
+
+package "Nivel de Procesamiento de NLP" {
+  component "Hugging Face Transformers (BERT)" as BERT
+  component "SpaCy" as Spacy
+  component "TensorFlow/PyTorch" as Tensor
+  component "Identificación de Entidades" as Identificacion
+  component "Clasificación de Relaciones" as Clasificacion
+  component "Propuestas de Actualización Ontológica" as Propuestas
+}
+
+Identificacion --> BERT : Detección de entidades
+Clasificacion --> Spacy : Análisis sintáctico
+Clasificacion --> Tensor : Entrenamiento de modelos
+Propuestas --> BERT : Sugerencia de cambios ontológicos
+
+@enduml

@@ -1,0 +1,14 @@
+@startuml
+
+package "Nivel de Gestión de Ontologías" {
+  component "OWL API" as OWL
+  component "Validación Automática" as Validacion
+  component "Almacenamiento de Versiones" as Almacenamiento
+  component "Resolución de Conflictos" as Resolucion
+}
+
+Validacion --> OWL
+Almacenamiento --> OWL
+Resolucion --> OWL
+
+@enduml

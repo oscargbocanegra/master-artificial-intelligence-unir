@@ -1,0 +1,34 @@
+@startuml
+start
+
+:Adquisición de Datos;
+:Filtrado;
+
+if (¿Datos Limpios?) then (No)
+  :Limpieza Automática;
+  :Transformación y Enriquecimiento;
+else (Sí)
+  :Transformación y Enriquecimiento;
+endif
+
+:Monitorización de Calidad;
+:Identificación de Entidades;
+:Clasificación de Relaciones;
+
+if (¿Actualizar Ontología?) then (Sí)
+  :Propuestas de Actualización Ontológica;
+  :Gestión de Ontologías;
+  :Validación Automática;
+  :Almacenamiento de Versiones;
+else (No)
+  :Fin de NLP;
+endif
+
+if (¿Conflictos?) then (Sí)
+  :Resolución de Conflictos;
+endif
+
+:Fin de Gestión;
+
+stop
+@enduml
