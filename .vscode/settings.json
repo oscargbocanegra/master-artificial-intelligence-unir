@@ -1,0 +1,19 @@
+{
+    "python.defaultInterpreterPath": "/home/ogiovanni/projects/github-repos/master-artificial-intelligence-unir/.venv/bin/python",
+    "python.terminal.activateEnvironment": true,
+    "python.terminal.activateEnvInCurrentTerminal": true,
+    "jupyter.kernels.filter": [],
+    "jupyter.kernels.trusted": [
+        "/home/ogiovanni/projects/github-repos/master-artificial-intelligence-unir/.venv/bin/python"
+    ],
+    "notebook.defaultLanguage": "python",
+    "notebook.kernelProviderAssociations": {
+        "*.ipynb": {
+            "kernelspec": {
+                "display_name": "VS Code Master IA (Python 3.12)",
+                "language": "python",
+                "name": "vscode-master-ia"
+            }
+        }
+    }
+}
